@@ -29,8 +29,8 @@ linux binary of the `secure-environment` executable are copied into your docker
 container to the following locations:
 
 ```
-secure-environment -> /secure-environment
-secure-entrypoint -> /secure-entrypoint.sh
+secure-environment -> /usr/sbin/secure-environment
+secure-entrypoint -> /usr/sbin/secure-entrypoint.sh
 ```
 
 _If you know what you're doing you can update the `secure-entrypoint.sh` file so you can change the location of these files._
@@ -38,11 +38,11 @@ _If you know what you're doing you can update the `secure-entrypoint.sh` file so
 Finally, you need to set the `ENTRYPOINT` on your dockerfile to this:
 
 ```
-ENTRYPOINT ["/secure-entrypoint.sh"]
+ENTRYPOINT ["/usr/sbin/secure-entrypoint.sh"]
 ```
 
 If you're using this with tini like we do at Virtru, then you would do this:
 
 ```
-ENTRYPOINT ["/usr/local/bin/tini", "--", "/secure-entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/tini", "--", "/usr/sbin/secure-entrypoint.sh"]
 ```
