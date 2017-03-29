@@ -10,7 +10,6 @@ BUILDS := build-linux build-macos
 INSTALL_SRC := builds/macos/secure-environment
 endif
 
-
 all: $(BUILDS)
 
 build-linux:
