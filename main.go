@@ -13,7 +13,7 @@ import (
 	"gopkg.in/urfave/cli.v1"
 )
 
-var envFileLineRegex = regexp.MustCompile("^([A-Za-z][0-9A-Za-z_])*=(.*)")
+var envFileLineRegex = regexp.MustCompile("^([A-Za-z][0-9A-Za-z_]*)=(.*)")
 
 func loadEnvironment(data []string, getKeyVal func(item string) (key, val string)) map[string]string {
 	items := make(map[string]string)
